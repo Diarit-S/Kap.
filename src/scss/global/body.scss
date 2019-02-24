@@ -1,0 +1,271 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  width: 100vw;
+  height: auto;
+  overflow-x: hidden;
+
+  h1 {
+    color: white;
+    margin-left: 30px;
+    margin-top: 20px;
+    font-weight: 900;
+    font-size: 70px;
+
+    &::after {
+      display: inline-block;
+      content: '';
+      width: 15px;
+      height: 15px;
+      background-color: white;
+      margin-left: 5px;
+    }
+  }
+}
+
+.greenBlock {@include block-position(-2, #2C4B40, 600px, 300px, -40%, -25%, -45deg)}
+.greenBlockOne {@include block-position(-2, #2C4B40, 500px, 500px, 10vw, 70vh, -45deg)}
+.greenBlockTwo {@include block-position(1, #2C4B40, 30px, 300px, 15vw, 88vh, -45deg)}
+.greenBlockThree {@include block-position(1, #2C4B40, 30px, 300px, 70vw, 300vh, -45deg)}
+.greenBlockFour {@include block-position(1, #2C4B40, 100px, 400px, 90vw, 290vh, -45deg)}
+.greenBlockFive {@include block-position(-1, #2C4B40, 250px, 600px, 0vw, 410vh, -45deg)}
+.redBlock {@include block-position(-1, #B83425, 500px, 100px, 60vw, -100%, 45deg)}
+.redBlockLittle {@include block-position(-1, #B83425, 500px, 30px, 45vw, -500vh, 45deg)}
+.redBlockLittleOne {@include block-position(-1, #B83425, 500px, 30px, -20vw, 30vh, 45deg)}
+.redBlockLittleTwo {@include block-position(-1, #B83425, 500px, 30px, -2vw, 90vh, 45deg)}
+.redBlockLittleThree {@include block-position(-1, #B83425, 500px, 150px, -5vw, 115vh, 45deg)}
+.redBlockLittleFour {@include block-position(-1, #B83425, 500px, 30px, 80vw, 115vh, 45deg)}
+.redBlockLittleFive {@include block-position(-1, #B83425, 500px, 300px, 80vw, 130vh, 45deg)}
+.redBlockLittleSix {@include block-position(3, #B83425, 450px, 180px, 62vw, 290vh, 45deg)}
+.redBlockLittleSeven {@include block-position(-1, #B83425, 500px, 30px, 65vw, 350vh, 45deg)}
+
+
+.blackBlock {
+  
+  @include block-position(0, black, 500px, 400px, 15vw, 90vh, 0deg);
+  color: white;
+  padding-top: 30px;
+
+  p {
+    display: block;
+    font-weight: 900;
+    font-size: 40px;
+    margin-left: 30px;
+  }
+
+  :nth-child(2) {
+    font-size : 20px;
+    font-weight: 500;
+  }
+}
+
+.blackBlockTwo {
+  position: absolute;
+  left: 340px;
+  top: 50vh;
+  background-color: black;
+  width: 230px;
+  height: 200px;
+  transform: translate(30vw, 90vh);
+  color: white;
+  padding-top: 30px;
+
+  :first-child {
+    margin-left: 30px; 
+    font-weight: 600;
+  }
+}
+
+.slogan {
+  position: absolute;
+  left: 50vw;
+  top: 30vh;
+  font-weight: 900;
+  font-size: 50px;
+
+  p {
+    font-weight: 900;
+    line-height: 50px;
+  }
+}
+
+.styleWoman {
+  z-index: -2;
+  position: absolute;
+  left: -50px;
+  top: -20px;
+  width: 40%;
+}
+
+.redText {
+  color: #B83425;
+}
+
+#Calque_1 {
+  margin-top: 20px;
+
+  .cls-1 {
+
+    transition: all 0.3s ease-in-out;
+  
+    &:hover {
+      cursor: pointer;
+      fill: white;
+    }
+  }
+}
+
+
+
+.available {
+
+  position: relative;
+  left: 55%;
+  top: 50%;
+  width: 40%;
+
+  :first-child {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .available__number {
+    font-size: 70px;
+    font-weight: 900;
+  }
+}
+
+.whatKap {
+  background-color: initial;
+  width: 400px;
+  top: 100vh;
+  color: black;
+  left: 310px;
+  
+  :first-child{
+    font-size: 22px;
+    font-weight: 800;
+
+    span {
+      opacity: 0.5;
+      margin: 0;
+    }
+  }
+}
+
+.bonnet {
+
+  position: absolute;
+  top: 200vh;
+  left: 40vh;
+
+  img {
+    width: 300px;
+  }
+}
+
+.repeatKap {
+  position: absolute;
+  top: 225vh;
+  left: 15vw;
+
+  * {
+    margin-top: 0;
+    color: black;
+
+    &::after {
+      background-color: black;
+    }
+  }
+}
+
+
+#Calque_2 {
+  position: absolute;
+  top: 280vh;
+  left: 20vw;
+
+  .cls-1 {
+
+    transition: all 0.3s ease-in-out;
+  
+    &:hover {
+      cursor: pointer;
+      fill: white;
+    }
+  }
+}
+
+
+.whatKap--two {
+  top: 210vh;
+  left: -180px;
+}
+
+.possible {
+  z-index: 4;
+  position: absolute;
+  left: 75vw;
+  top: 350vh;
+  font-size: 70px;
+  font-weight: 900;
+}
+
+.shuffle {
+  z-index: 4;
+  position: absolute;
+  top: 330vh;
+  left: 66vw;
+}
+
+.men {
+  position: absolute;
+  width: 500px;
+  top: 390vh;
+}
+
+.blackBlockThree {
+  background-color: black;
+  color: white;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 400vh;
+  left: 50vw;
+
+  :nth-child(1) {
+    font-weight: 900;
+    font-size: 30px;
+  }
+  :nth-child(2) {
+    font-weight: 200;
+    font-size: 20px;
+  }
+
+  text-align: end;
+  padding: 10px;
+}
+
+.blackBlockFour {
+  background-color: black;
+  color: white;
+  width: 250px;
+  height: 150px;
+  position: absolute;
+  top: 415vh;
+  left: 20vw;
+  text-align: end;
+  padding: 10px;
+
+  :nth-child(1), :nth-child(2) {
+    font-weight: 900;
+    font-size: 30px;
+  }
+  :nth-child(3) {
+    font-weight: 200;
+    font-size: 20px;
+  }  
+}
+
+.whatKap--three {
+  top: 350vh;
+}

@@ -1,0 +1,9 @@
+@mixin block-position($z, $bg, $w, $h, $vw, $vh, $r) {
+  z-index: $z;
+  position: absolute;
+  background-color: $bg;
+  width: $w;
+  height: $h;
+  transform: translate($vw , $vh) rotate($r);
+  transition: transform 1s ease-in-out;
+}

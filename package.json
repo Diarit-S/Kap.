@@ -1,0 +1,27 @@
+{
+  "name": "kap",
+  "version": "1.0.0",
+  "description": "Kap Website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diarit-S/Kap..git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diarit-S/Kap./issues"
+  },
+  "homepage": "https://github.com/Diarit-S/Kap.#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0",
+    "sass": "^1.17.0"
+  },
+  "dependencies": {
+    "rellax": "^1.8.0"
+  }
+}
