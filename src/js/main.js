@@ -8,12 +8,10 @@ let parallax = (element, x, y, rotate, posy) => {
 }
 
 var blackBlock = document.querySelector('.blackBlock');
-
 var avNumber = document.querySelector('.available__number');
 var number = 3168;
 var block = document.querySelectorAll('.block')
 avNumber.innerHTML = number;
-
 
 setInterval(() => {
   number--;
@@ -32,11 +30,3 @@ parallax(block[7], 65, 110, 45, 400);
 parallax(block[8], 50, 269, 45, 1800);
 parallax(block[9], 75, 367, 45, 2500);
 parallax(block[block.length-1], 10, 425, -45, 3600);
-
-
-console.log(block[9]);
-
-
-
-
-
