@@ -67,7 +67,11 @@ var colors = document.querySelectorAll('.color div');
 var blackBarreTwo = document.querySelector('.blackBarre2');
 var nbrClick = 1;
 var stripesChoices = document.querySelectorAll('.stripes div');
-console.log(stripesChoices);
+var blackBarreThree = document.querySelector('.blackBarre2--stripe');
+var blockR = document.querySelector('.blockR');
+console.log(blackBarreThree);
+
+
 
 
 let color = (choice, translate, color) => {
@@ -75,7 +79,6 @@ let color = (choice, translate, color) => {
   choice.addEventListener('click', () => {
 
     stripes.style.transform = 'translateY(230px)';
-    stripesChoices[0].style.background = `linear-gradient(45deg, #B83425 50%, ${color} 0%)`;
     
     blackBarreTwo.style.transform = `translateX(${translate}px)`;
     var block = document.createElement('div');
@@ -121,5 +124,73 @@ color(colors[4], 297, '#E8E8E8')
 
 
 
+let stripe = (choice, translate, color) => {
+
+  choice.addEventListener('click', () => {
+
+    if (blockR.childNodes.length > 1) {
+      while (blockR.childNodes.length > 0) {
+        blockR.removeChild(blockR.lastChild);
+      }
+    }
+
+    blackBarreThree.style.transform = `translateX(${translate}px)`;
+    var block1 = document.createElement('div');
+    var block2 = document.createElement('div');
+    var block3 = document.createElement('div');
+    block1.style.height = '50px';
+    block2.style.height = '50px';
+    block3.style.height = '50px';
+    block1.style.width = '300px';
+    block2.style.width = '300px';
+    block3.style.width = '300px'; 
+    block1.style.transform = 'rotate(45deg)'; 
+    block2.style.transform = 'rotate(45deg)'; 
+    block3.style.transform = 'rotate(45deg)'; 
+    block1.style.backgroundColor = `${color}`;
+    block2.style.backgroundColor = `${color}`;
+    block3.style.backgroundColor = `${color}`;
+    blockR.appendChild(block1);
+    blockR.appendChild(block2);
+    blockR.appendChild(block3);
+    console.log('a');
+    // block.style.transform = 'rotate(45deg) translateX(1500px)';
+    // block.style.backgroundColor = `${color}`
+    // contenant.appendChild(block);
+    // if (contenant.childNodes[1].nodeType !== 3) {
+    //   if (contenant.childNodes[1].classList.contains('blackBlockP')) {
+    //     setTimeout(() => {
+    //       contenant.childNodes[1].style.transform = 'rotate(45deg) translateX(-1500px)'
+    //       block.style.transform = 'rotate(45deg) translateX(0px)';
+    //       setTimeout(() => {
+    //         contenant.removeChild(contenant.childNodes[1]);
+    //       }, 500);
+    //     },);
+    //   }
+    // }
+    // nbrClick++;
+    
+    // if (contenant.lastChild.classList.contains('blackBlockP') && nbrClick > 2) {
+    //   contenant.childNodes[contenant.childNodes.length - 2].style.transform = 'rotate(45deg) translateX(-1500px)';
+    //   setTimeout(() => {
+    //     contenant.removeChild(contenant.childNodes[contenant.childNodes.length - 2])
+    //   }, 500);
+    //   setTimeout(() => {
+    //     contenant.lastChild.style.transform = 'rotate(45deg) translateX(0px)';
+        
+    //   }, );
+    //   console.log(contenant.lastChild);
+    // }
+    
+  })
+}
+
+
+
+stripe(stripesChoices[0], 5, '#B83425');
+stripe(stripesChoices[1], 78, '#B83425');
+stripe(stripesChoices[2], 151, '#B83425');
+stripe(stripesChoices[3], 224, '#B83425');
+stripe(stripesChoices[4], 297, '#B83425');
 
 
