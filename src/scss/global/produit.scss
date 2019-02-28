@@ -38,6 +38,7 @@
 
 
 .bonnet_noir {
+  z-index: 1;
   position: absolute;
   width: 500px;
   top: 20vh;
@@ -280,6 +281,14 @@
 }
 
 .stripesColors {
+
   transform: translateY(1000px);
   height: 190px;
+}
+
+
+.blockR {
+  * {
+    transition: transform 0.5s ease-in-out;
+  }
 }
