@@ -11,8 +11,16 @@ var toggle = function() {
 
 };
 
-firstChoice.addEventListener('click', toggle);
-secondChoice.addEventListener('click', toggle);
+firstChoice.addEventListener('click', (e)=>{
+  if (e.target.classList.contains('choicee')) {
+    toggle();
+  }
+});
+secondChoice.addEventListener('click', (e)=>{
+  if (e.target.classList.contains('choicee')) {
+    toggle();
+  }
+});
 
 var sizes = document.querySelectorAll('.sizeChoice div');
 var blackBarre = document.querySelector('.blackBarre')
@@ -36,7 +44,10 @@ var stepBar = document.querySelector('.step');
 var blackBlockP = document.querySelector('.blackBlockP');
 var contenant = document.querySelector('.contenant');
 var retour = document.querySelector('.retour');
-var stripes = document.querySelector('.stripesColors')
+var stripes = document.querySelector('.stripesColors');
+var text = document.querySelector('.base--text');
+var final = document.querySelector('.base--final');
+
 
 
 
@@ -51,14 +62,25 @@ nexts[1].addEventListener('click', () => {
   base.style.transform = 'translateY(-2000px)';
   baseColor.style.transform = 'translateY(-1000px)';
   stepBar.style.transform = 'translateY(112px)';
-  stripes.style.transform = "translateY(-900px)"
+  stripes.style.transform = "translateY(-900px)";
+  text.style.transform = "translateY(0px)";
 })
+
+nexts[2].addEventListener('click', () => {
+  stepBar.style.transform = 'translateY(168px)';
+  text.style.transform = "translateY(-1000px)";
+  final.style.transform = "translateY(0px)";
+})
+
+
 
 retour.addEventListener('click', () => {
   base.style.transform = 'translateY(0px)';
   baseColor.style.transform = 'translateY(1000px)';
   stepBar.style.transform = 'translateY(0px)';
-  stripes.style.transform = "translateY(2000px)"
+  stripes.style.transform = "translateY(2000px)";
+  text.style.transform = "translateY(3000px)";
+  final.style.transform = "translateY(4000px)";
   retour.style.opacity = '0';
 })
 
@@ -72,6 +94,8 @@ var blockR = document.querySelector('.blockR');
 console.log(blackBarreThree);
 
 
+
+// Big block
 
 
 let color = (choice, translate, color) => {
@@ -93,8 +117,8 @@ let color = (choice, translate, color) => {
           block.style.transform = 'rotate(45deg) translateX(0px)';
           setTimeout(() => {
             contenant.removeChild(contenant.childNodes[1]);
-          }, 500);
-        },);
+          }, 450);
+        },50);
       }
     }
     nbrClick++;
@@ -108,7 +132,7 @@ let color = (choice, translate, color) => {
         setTimeout(() => {
           contenant.lastChild.style.transform = 'rotate(45deg) translateX(0px)';
           
-        }, );
+        }, 50);
         console.log(contenant.lastChild);
       }
     
@@ -123,6 +147,10 @@ color(colors[3], 224, '#2C4B40')
 color(colors[4], 297, '#E8E8E8')
 
 
+
+
+
+// Small Stripes
 
 let stripe = (choice, translate, color) => {
 
