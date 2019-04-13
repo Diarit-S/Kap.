@@ -49,8 +49,6 @@ var text = document.querySelector('.base--text');
 var final = document.querySelector('.base--final');
 
 
-
-
 nexts[0].addEventListener('click', () => {
   base.style.transform = 'translateY(-1000px)';
   baseColor.style.transform = 'translateY(0px)';
@@ -108,7 +106,7 @@ let color = (choice, translate, color) => {
     var block = document.createElement('div');
     block.className = 'blackBlockP';
     block.style.transform = 'rotate(45deg) translateX(1500px)';
-    block.style.backgroundColor = `${color}`
+    block.style.backgroundColor = `${color}`;
     contenant.appendChild(block);
     if (contenant.childNodes[1].nodeType !== 3) {
       if (contenant.childNodes[1].classList.contains('blackBlockP')) {
@@ -122,7 +120,6 @@ let color = (choice, translate, color) => {
       }
     }
     nbrClick++;
-    
       
       if (contenant.lastChild.classList.contains('blackBlockP') && nbrClick > 2) {
         contenant.childNodes[contenant.childNodes.length - 2].style.transform = 'rotate(45deg) translateX(-1500px)';
@@ -131,12 +128,9 @@ let color = (choice, translate, color) => {
         }, 500);
         setTimeout(() => {
           contenant.lastChild.style.transform = 'rotate(45deg) translateX(0px)';
-          
         }, 50);
         console.log(contenant.lastChild);
-      }
-    
-      
+      } 
   })
 }
 
@@ -145,9 +139,6 @@ color(colors[1], 78, '#EDE403')
 color(colors[2], 151, 'black')
 color(colors[3], 224, '#2C4B40')
 color(colors[4], 297, '#E8E8E8')
-
-
-
 
 
 // Small Stripes
@@ -178,41 +169,36 @@ let stripe = (choice, translate, color) => {
 
     setTimeout(() => {
       
-      var block1 = document.createElement('div');
-      var block2 = document.createElement('div');
-      var block3 = document.createElement('div');
+      for (let i = 0; i < 3; i++) {
+        var block = document.createElement('div');
+        blockR.appendChild(block);
+      }
 
-      block1.style.height = '50px';
-      block2.style.height = '50px';
-      block3.style.height = '50px';
-      block1.style.width = '300px';
-      block2.style.width = '300px';
-      block3.style.width = '300px'; 
-      block1.style.transform = 'rotate(45deg) translate(-500px, -119px)'; 
-      block2.style.transform = 'rotate(45deg) translate(1500px, 174px)'; 
-      block3.style.transform = 'rotate(45deg) translate(-500px, 379px)';
-      block1.style.backgroundColor = `${color}`;
-      block2.style.backgroundColor = `${color}`;
-      block3.style.backgroundColor = `${color}`;
-      block1.style.position = `absolute`;
-      block2.style.position = `absolute`;
-      block3.style.position = `absolute`;
-      blockR.appendChild(block1);
-      blockR.appendChild(block2);
-      blockR.appendChild(block3);
+      var newBlocks = blockR.childNodes;
+
+      console.log(newBlocks);
+      
+      newBlocks.forEach(block => {
+        block.style.height = '50px';
+        block.style.width = '300px';
+        block.style.backgroundColor = `${color}`;
+        block.style.position = `absolute`;
+      });
+
+      newBlocks[0].style.transform = 'rotate(45deg) translate(-500px, -119px)'; 
+      newBlocks[1].style.transform = 'rotate(45deg) translate(1500px, 174px)'; 
+      newBlocks[2].style.transform = 'rotate(45deg) translate(-500px, 379px)';
 
       setTimeout(() => {
-        block1.style.transform = 'rotate(45deg) translate(89px, -119px)'; 
-        block2.style.transform = 'rotate(45deg) translate(800px, 174px)'; 
-        block3.style.transform = 'rotate(45deg) translate(268px, 379px)'; 
+        newBlocks[0].style.transform = 'rotate(45deg) translate(89px, -119px)'; 
+        newBlocks[1].style.transform = 'rotate(45deg) translate(800px, 174px)'; 
+        newBlocks[2].style.transform = 'rotate(45deg) translate(268px, 379px)'; 
       }, 100);
       
     }, 200);
     
   })
 }
-
-
 
 stripe(stripesChoices[0], 5, '#B83425');
 stripe(stripesChoices[1], 78, '#EDE403');
