@@ -2,6 +2,9 @@
 
 var firstChoice = document.querySelector('.choicee');
 var secondChoice = document.querySelector('.choiceee');
+var modelParam = document.querySelector('.modelFinal');
+var sizeParam = document.querySelector('.sizeFinal')
+
 
 var toggle = function() {
 
@@ -14,11 +17,13 @@ var toggle = function() {
 firstChoice.addEventListener('click', (e)=>{
   if (e.target.classList.contains('choicee')) {
     toggle();
+    modelParam.innerHTML = "Sans Pompon";
   }
 });
 secondChoice.addEventListener('click', (e)=>{
   if (e.target.classList.contains('choicee')) {
     toggle();
+    modelParam.innerHTML = "Avec Pompon";
   }
 });
 
@@ -27,12 +32,15 @@ var blackBarre = document.querySelector('.blackBarre')
 
 sizes[0].addEventListener('click', () => {
   blackBarre.style.transform = 'translateX(5px)'
+  sizeParam.innerHTML = "S";
 })
 sizes[1].addEventListener('click', () => {
   blackBarre.style.transform = 'translateX(85px)'
+  sizeParam.innerHTML = "M";
 })
 sizes[2].addEventListener('click', () => {
   blackBarre.style.transform = 'translateX(165px)'
+  sizeParam.innerHTML = "L";
 })
 
 // next
@@ -72,14 +80,30 @@ nexts[2].addEventListener('click', () => {
 
 
 
-retour.addEventListener('click', () => {
-  base.style.transform = 'translateY(0px)';
-  baseColor.style.transform = 'translateY(1000px)';
-  stepBar.style.transform = 'translateY(0px)';
-  stripes.style.transform = "translateY(2000px)";
-  text.style.transform = "translateY(3000px)";
-  final.style.transform = "translateY(4000px)";
-  retour.style.opacity = '0';
+retour.addEventListener('click', (e) => {
+  
+  if (stepBar.style.transform === 'translateY(168px)')  {
+    stepBar.style.transform = 'translateY(112px)';
+    text.style.transform = "translateY(0px)";
+    final.style.transform = "translateY(2000px)";
+  }
+  else if (stepBar.style.transform === 'translateY(112px)')  {
+    baseColor.style.transform = 'translateY(0px)';
+    stripes.style.transform = "translateY(230px)";
+    text.style.transform = "translateY(2000px)";
+    stepBar.style.transform = 'translateY(56px)';
+  }
+  else if (stepBar.style.transform === 'translateY(56px)')  {
+    baseColor.style.transform = 'translateY(2000px)';
+    stripes.style.transform = "translateY(2230px)";
+    stepBar.style.transform = 'translateY(0px)';
+    base.style.transform = 'translateY(0px)';
+    retour.style.opacity = '0';
+  }
+
+
+  // stripes.style.transform = "translateY(2000px)";
+  e.stopPropagation();
 })
 
 
@@ -89,14 +113,15 @@ var nbrClick = 1;
 var stripesChoices = document.querySelectorAll('.stripes div');
 var blackBarreThree = document.querySelector('.blackBarre2--stripe');
 var blockR = document.querySelector('.blockR');
-console.log(blackBarreThree);
+var stripesParam = document.querySelector('.stripeFinal');
+var colorParam = document.querySelector('.colorFinal')
 
 
 
 // Big block
 
 
-let color = (choice, translate, color) => {
+let color = (choice, translate, color, finalColor) => {
 
   choice.addEventListener('click', () => {
 
@@ -131,19 +156,20 @@ let color = (choice, translate, color) => {
         }, 50);
         console.log(contenant.lastChild);
       } 
+    colorParam.innerHTML = `${finalColor}`;
   })
 }
 
-color(colors[0], 5, '#B83425')
-color(colors[1], 78, '#EDE403')
-color(colors[2], 151, 'black')
-color(colors[3], 224, '#2C4B40')
-color(colors[4], 297, '#E8E8E8')
+color(colors[0], 5, '#B83425', 'Red')
+color(colors[1], 78, '#EDE403', 'Yellow')
+color(colors[2], 151, 'black', 'Black')
+color(colors[3], 224, '#2C4B40', 'Green')
+color(colors[4], 297, '#E8E8E8', 'White')
 
 
 // Small Stripes
 
-let stripe = (choice, translate, color) => {
+let stripe = (choice, translate, color, finalColor) => {
 
   choice.addEventListener('click', () => {
 
@@ -197,13 +223,25 @@ let stripe = (choice, translate, color) => {
       
     }, 200);
     
+    stripesParam.innerHTML = `${finalColor}`;
   })
+
+
 }
 
-stripe(stripesChoices[0], 5, '#B83425');
-stripe(stripesChoices[1], 78, '#EDE403');
-stripe(stripesChoices[2], 151, 'black');
-stripe(stripesChoices[3], 224, '#2C4B40');
-stripe(stripesChoices[4], 297, '#E8E8E8');
+stripe(stripesChoices[0], 5, '#B83425', 'Red');
+stripe(stripesChoices[1], 78, '#EDE403', 'Yellow');
+stripe(stripesChoices[2], 151, 'black', 'Black');
+stripe(stripesChoices[3], 224, '#2C4B40', 'Green');
+stripe(stripesChoices[4], 297, '#E8E8E8', 'White');
 
 
+
+// Input text
+
+var textInput = document.querySelector('.base--text input');
+var textParam = document.querySelector('.textFinal');
+
+textInput.addEventListener('input', (e)=>{
+  textParam.innerHTML = `${e.target.value}`;
+})

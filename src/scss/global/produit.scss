@@ -1,8 +1,14 @@
+a {
+  max-width: 170px;
+  
+}
+
 .logoProduit {
   color: black;
   &::after {
     background-color: black;
   }
+  max-width: 170px;
 }
 .contenant {
   position: absolute;
@@ -216,6 +222,10 @@
   flex-direction: column;
   justify-content: space-between;
   height: 300px;
+
+  p span {
+    font-weight: 600;
+  }
 
   .titleFinal {
     color: black;
