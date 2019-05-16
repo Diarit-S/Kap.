@@ -18,6 +18,8 @@ setInterval(() => {
   avNumber.innerHTML = number;
 }, 10000);
 
+
+
 parallax(blackBlock, 15, 80, 0, 100);
 parallax(block[0], -12, -10, -45, 1);
 parallax(block[1], 50, -30, 45, 1);

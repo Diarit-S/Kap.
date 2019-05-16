@@ -3,7 +3,7 @@
 var firstChoice = document.querySelector('.choicee');
 var secondChoice = document.querySelector('.choiceee');
 var modelParam = document.querySelector('.modelFinal');
-var sizeParam = document.querySelector('.sizeFinal')
+var sizeParam = document.querySelector('.sizeFinal');
 
 
 var toggle = function() {
